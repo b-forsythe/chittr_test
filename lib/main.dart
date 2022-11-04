@@ -47,43 +47,145 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Align( // Brooks Building
-              alignment: FractionalOffset(0.5, 0.04),
+              alignment: const FractionalOffset(0.5, 0.04),
               child: IconButton(
                 icon: Image.asset('assets/images/brookspin.png'),
                 iconSize: 78,
-                onPressed: () {}, // TODO, ADD CLICK FUNCTIONALITY
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BrooksPage()),
+                  );
+                },
+
               ),
             ),
 
             Align( // Bunnell Building
-              alignment: FractionalOffset(0.35, 0.5),
+              alignment: const FractionalOffset(0.35, 0.5),
               child: IconButton(
                 icon: Image.asset('assets/images/bunnellpin.png'),
                 iconSize: 78,
-                onPressed: () {}, // TODO, ADD CLICK FUNCTIONALITY
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BunnellPage()),
+                  );
+                },
               ),
             ),
 
             Align( // Duckering Building
-              alignment: FractionalOffset(0.75, 0.15),
+              alignment: const FractionalOffset(0.75, 0.15),
               child: IconButton(
                 icon: Image.asset('assets/images/duckpin.png'),
                 iconSize: 78,
-                onPressed: () {}, // TODO, ADD CLICK FUNCTIONALITY
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DuckPage()),
+                  );
+                },
               ),
             ),
 
             Align( // ELIF Building
-              alignment: FractionalOffset(0.87, 0.58),
+              alignment: const FractionalOffset(0.87, 0.58),
               child: IconButton(
                 icon: Image.asset('assets/images/elifpin.png'),
                 iconSize: 78,
-                onPressed: () {}, // TODO, ADD CLICK FUNCTIONALITY
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ELIFPage()),
+                  );
+                },
               ),
             ),
           ], // CHILDREN
         ),
       ),
+    );
+  }
+}
+
+class BrooksPage extends StatelessWidget {
+  const BrooksPage({super.key});
+
+  @override
+
+  Widget build(BuildContext context){
+    return Scaffold(
+
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          }, child: const Text("Your mom"),
+        ),
+      )
+
+    );
+  }
+}
+
+
+
+class BunnellPage extends StatelessWidget {
+  const BunnellPage({super.key});
+
+  @override
+
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text("Your Dad"),
+        ),
+      )
+    );
+  }
+}
+
+class DuckPage extends StatelessWidget {
+  const DuckPage({super.key});
+
+  @override
+
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text ("Your Grandfather"),
+        )
+      )
+    );
+  }
+}
+
+
+
+class ELIFPage extends StatelessWidget {
+  const ELIFPage({super.key});
+
+  @override
+
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text("Your Grandmother"),
+        )
+      )
     );
   }
 }
