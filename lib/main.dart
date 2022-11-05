@@ -109,6 +109,10 @@ class _MyHomePageState extends State<MyHomePage> {    // Creation of Home Page
   }
 }
 
+//    -------------------------------
+//             Brooks Building
+//    -------------------------------
+
 class BrooksPage extends StatelessWidget {    // Creates a new "Page" using a class.
   const BrooksPage({super.key});
 
@@ -129,7 +133,9 @@ class BrooksPage extends StatelessWidget {    // Creates a new "Page" using a cl
   }
 }
 
-
+//    -------------------------------
+//            Bunnell Building
+//    -------------------------------
 
 class BunnellPage extends StatelessWidget {
   const BunnellPage({super.key});
@@ -149,6 +155,11 @@ class BunnellPage extends StatelessWidget {
     );
   }
 }
+
+//    -------------------------------
+//           Duckering Building
+//    -------------------------------
+
 
 class DuckPage extends StatelessWidget {
   const DuckPage({super.key});
@@ -170,6 +181,10 @@ class DuckPage extends StatelessWidget {
 }
 
 
+//    -------------------------------
+//              ELIF Building
+//    -------------------------------
+
 
 class ELIFPage extends StatelessWidget {
   const ELIFPage({super.key});
@@ -178,13 +193,30 @@ class ELIFPage extends StatelessWidget {
 
   Widget build(BuildContext context){
     return Scaffold(
-      body: Center(
+      appBar: AppBar(
+        title: const Text("ELIF Building"),
+        backgroundColor: Colors.deepPurple,
+        centerTitle: true,
+      ),
+      body: Stack(
+        children: [
+          Align(
+            alignment: Alignment.topCenter,
         child: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text("Your Grandmother"),
-        )
+          child: const Text("Home"),
+        ),
+          ),
+          DropdownButton(
+            items: const [
+              DropdownMenuItem(child: Text("Test"), value: 1),
+              DropdownMenuItem(child: Text("Test2"), value: 2),
+            ],
+            onChanged: (value);
+          ),
+       ],
       )
     );
   }
