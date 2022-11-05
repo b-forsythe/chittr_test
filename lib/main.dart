@@ -4,11 +4,11 @@
 
 import 'package:flutter/material.dart';
 
-void main() {
+void main() { // Base run for App.
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { // Base app creation
   const MyApp({super.key});
 
   @override
@@ -19,26 +19,26 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Stateful widget for __myHomePage()
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget { // Stateful widget for MyHomePage()
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {    // Creation of Home Page
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    // Design Widget
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(     // "Header" for Main page
         title: Text("ChittR (Lower Campus)"),
         centerTitle: (true),
         backgroundColor: Colors.brown,
       ),
-      body: Center(
+      body: Center(     // <- This constitutes everything under the header
         child: Stack(
           children: [
-            Image.asset(
+            Image.asset(    // Image Creator for lower campus map
               'assets/images/lowercampus.png',
               width: 400,
               height: 500,
@@ -46,22 +46,22 @@ class _MyHomePageState extends State<MyHomePage> {
               semanticLabel: 'UAF Lower Campus Map',
             ),
 
-            Align( // Brooks Building
-              alignment: const FractionalOffset(0.5, 0.04),
+            Align(    // Brooks Building
+              alignment: const FractionalOffset(0.5, 0.04),     // Determines x,y position of button
               child: IconButton(
-                icon: Image.asset('assets/images/brookspin.png'),
-                iconSize: 78,
+                icon: Image.asset('assets/images/brookspin.png'),     // Loads image
+                iconSize: 78,     // Sets size
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.push(     // Push adds a new "Route" so that app can move to that screen
                     context,
-                    MaterialPageRoute(builder: (context) => const BrooksPage()),
+                    MaterialPageRoute(builder: (context) => const BrooksPage()), // On click, will move to the -- const (pageName) page.
                   );
                 },
 
               ),
             ),
 
-            Align( // Bunnell Building
+            Align( // Bunnell Building  ( See Brooks building comments for how all this works)
               alignment: const FractionalOffset(0.35, 0.5),
               child: IconButton(
                 icon: Image.asset('assets/images/bunnellpin.png'),
@@ -109,18 +109,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class BrooksPage extends StatelessWidget {
+class BrooksPage extends StatelessWidget {    // Creates a new "Page" using a class.
   const BrooksPage({super.key});
 
   @override
 
-  Widget build(BuildContext context){
+  Widget build(BuildContext context){   // Build Widget for design of page.
     return Scaffold(
 
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(context);   // On click, will return to "context" (in this case, home page).
           }, child: const Text("Your mom"),
         ),
       )
