@@ -209,13 +209,14 @@ class ELIFPage extends StatelessWidget {
           child: const Text("Home"),
         ),
           ),
+		  /*
           DropdownButton(
             items: const [
               DropdownMenuItem(child: Text("Test"), value: 1),
               DropdownMenuItem(child: Text("Test2"), value: 2),
             ],
             onChanged: (value);
-          ),
+          ),*/
        ],
       )
     );
