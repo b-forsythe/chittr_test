@@ -1,6 +1,5 @@
 // Copyright 2022 ChittR LLC.
 
-import 'package:chittr_test/main.dart';
 import 'package:flutter/material.dart';
 
 void main() {
