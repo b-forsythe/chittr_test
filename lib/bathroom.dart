@@ -4,35 +4,35 @@ class Bathroom {
   // ********************
   // *** Data Members ***
   // ********************
-  String bld_name = "";
-  String room_num = "";
-  int sex = 0; // M for male, F for female, and U for Unisex
-  int up_vote_num = 0;
-  int down_vote_num = 0;
+  String bldName = "";
+  String roomNum = "";
+  int sex = 0; // 0 for male, 1 for female, and 2 for Unisex
+  int upVoteNum = 0;
+  int downVoteNum = 0;
   bool accessibility = false;
-  String addi_info = "";
+  String addiInfo = "";
 
 
   // ********************
   // *** Constructors ***
   // ********************
 
-  Bathroom(this.bld_name, this.room_num, this.sex,
-      this.up_vote_num, this.down_vote_num,
-      this.accessibility, this.addi_info);
+  Bathroom(this.bldName, this.roomNum, this.sex,
+      this.upVoteNum, this.downVoteNum,
+      this.accessibility, this.addiInfo);
 
   // ****************************
   // *** Get member functions ***
   // ****************************
-  String get_bld_name(){
-    return bld_name;
+  String getBldName(){
+    return bldName;
   }
 
-  String get_room_num(){
-    return room_num;
+  String getRoomNum(){
+    return roomNum;
   }
 
-  String get_sex(){
+  String getSex(){
     if (sex == 0){
       return "Male";
     }
@@ -47,17 +47,17 @@ class Bathroom {
     }
   }
 
-  int get_up_vote_num(){
-    return up_vote_num;
+  int getUpVoteNum(){
+    return upVoteNum;
   }
-  int get_down_vote_num(){
-    return down_vote_num;
+  int getDownVoteNum(){
+    return downVoteNum;
   }
-  bool get_accessibility(){
+  bool getAccessibility(){
     return accessibility;
   }
-  String get_addi_info(){
-    return addi_info;
+  String getAddiInfo(){
+    return addiInfo;
 }
 
 
