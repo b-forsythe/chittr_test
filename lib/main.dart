@@ -4,9 +4,22 @@
 
 import 'package:flutter/material.dart';
 
+//import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
+//import 'bathroom.dart';
+
 void main() {
   // Base run for App.
   runApp(const MyApp());
+
+  // Ignore Bellow Testing List of Bathrooms
+  /*
+  var test1 = Bathroom.set("ELIF", "100F", 1, 2,0,false,"no additional info");
+  var test2 = Bathroom.set("ELIF", "100M", 0, 2,0,false,"no additional info");
+  List<Bathroom> bathroomList = [];
+  bathroomList.add(test1);
+  bathroomList.add(test2);
+  */
+
 }
 
 class MyApp extends StatelessWidget {

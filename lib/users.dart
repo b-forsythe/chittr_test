@@ -10,7 +10,8 @@ class User {
   // ********************
   // *** Constructors ***
   // ********************
-  User(this.userName, this.userID);
+  User();
+  User.set(this.userName, this.userID);
 
   // ****************************
   // *** Get member functions ***
@@ -30,6 +31,9 @@ class User {
 
   void setUserName(String userName){
     this.userName = userName;
+  }
+  void setUserID(int userID){
+    this.userID = userID;
   }
 
   // ***********************************

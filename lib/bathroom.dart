@@ -17,7 +17,9 @@ class Bathroom {
   // *** Constructors ***
   // ********************
 
-  Bathroom(this.bldName, this.roomNum, this.sex,
+  Bathroom();
+
+  Bathroom.set(this.bldName, this.roomNum, this.sex,
       this.upVoteNum, this.downVoteNum,
       this.accessibility, this.addiInfo);
 
@@ -58,13 +60,36 @@ class Bathroom {
   }
   String getAddiInfo(){
     return addiInfo;
-}
+  }
 
 
 // ****************************
 // *** Set member functions ***
 // ****************************
+  void setBldName(String bldName){
+    this.bldName = bldName;
+  }
 
+  void setRoomNum(String roomNum){
+    this.roomNum = roomNum;
+  }
+
+  void setSex(int sex){
+    this.sex = sex;
+  }
+
+  void setUpVoteNum(int upVoteNum){
+    this.upVoteNum = upVoteNum;
+  }
+  void setDownVoteNum(int downVoteNum){
+    this.downVoteNum = downVoteNum;
+  }
+  void setAccessibility(bool accessibility){
+    this.accessibility = accessibility;
+  }
+  void setAddiInfo(String addiInfo){
+    this.addiInfo = addiInfo;
+  }
 // ***********************************
 // *** Additional Member functions ***
 // ***********************************
