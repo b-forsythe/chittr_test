@@ -6,7 +6,7 @@ class Bathroom {
   // ********************
   String bldName = "";
   String roomNum = "";
-  int sex = 0; // 0 for male, 1 for female, and 2 for Unisex
+  int sex = 0;
   int upVoteNum = 0;
   int downVoteNum = 0;
   bool accessibility = false;
@@ -16,13 +16,38 @@ class Bathroom {
   // ********************
   // *** Constructors ***
   // ********************
-
   Bathroom();
 
   Bathroom.set(this.bldName, this.roomNum, this.sex,
       this.upVoteNum, this.downVoteNum,
       this.accessibility, this.addiInfo);
+	  
+	// **************************
+	// *** JSON Needed Things ***
+	// **************************
 
+	Bathroom.fromJson(Map<String, dynamic> json) {
+    bldName = json['bldName'];
+    roomNum = json['roomNum'];
+    sex = json['sex'];
+    upVoteNum = json['upVoteNum'];
+    downVoteNum = json['downVoteNum'];
+    accessibility = json['accessibility'];
+    addiInfo = json['addiInfo'];
+	}
+	
+	Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['bldName'] = this.bldName;
+    data['roomNum'] = this.roomNum;
+    data['sex'] = this.sex;
+    data['upVoteNum'] = this.upVoteNum;
+    data['downVoteNum'] = this.downVoteNum;
+    data['accessibility'] = this.accessibility;
+    data['addiInfo'] = this.addiInfo;
+    return data;
+	}
+  
   // ****************************
   // *** Get member functions ***
   // ****************************
