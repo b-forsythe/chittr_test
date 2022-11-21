@@ -1,11 +1,10 @@
 // Copyright 2022 ChittR LLC.
 
 
-
 import 'package:flutter/material.dart';
 
 //import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
-//import 'bathroom.dart';
+import 'bathroom.dart';
 
 void main() {
   // Base run for App.
@@ -215,7 +214,7 @@ class _ELIFPageState extends State<ELIFPage> {
           body: Stack(
             children: [
               Align(
-                alignment: Alignment.topCenter,
+                alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -223,8 +222,12 @@ class _ELIFPageState extends State<ELIFPage> {
                   child: const Text("Home"),
                 ),
               ),
+
+               // --------------------------
+               //   Drop-down Menu Selector
+               // --------------------------
                Padding(
-                  padding: const EdgeInsets.only(top:200),
+                  padding: const EdgeInsets.only(top:1),
                    child: DropdownButton(
                      isExpanded: true,
                      value: selectVal,
@@ -244,4 +247,25 @@ class _ELIFPageState extends State<ELIFPage> {
           )),
     );
   }
+
+  // --------------------------
+  //     Room List Selector
+  // --------------------------
+  /*
+  Widget _buildList() {
+    return ListView(
+
+      children: [
+        _roomSelector(),
+      ],
+
+    );
+  }
+
+  ListTile _roomSelector(Icon roomPreview, Bathroom roomData) {
+    return ListTile(
+
+    );
+  } */
+
 }
