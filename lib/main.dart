@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 
 //import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
-import 'bathroom.dart';
+import 'bathroom.dart'; // ~B : I'm going to try implementing this at the bottom.
 
 void main() {
   // Base run for App.
