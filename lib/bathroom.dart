@@ -4,11 +4,11 @@ class Bathroom {
   // ********************
   // *** Data Members ***
   // ********************
-  String bldName = "";
+  String bldName ="";
   String roomNum = "";
   int sex = 0;
   int upVoteNum = 0;
-  int downVoteNum = 0;
+  int downVoteNum = 0 ;
   bool accessibility = false;
   String addiInfo = "";
 
@@ -16,7 +16,7 @@ class Bathroom {
   // ********************
   // *** Constructors ***
   // ********************
-  Bathroom();
+  Bathroom({required this.roomNum,  required this.sex, required this.accessibility});
 
   Bathroom.set(this.bldName, this.roomNum, this.sex,
       this.upVoteNum, this.downVoteNum,
@@ -51,7 +51,7 @@ class Bathroom {
   // ****************************
   // *** Get member functions ***
   // ****************************
-  String getBldName(){
+ String getBldName(){
     return bldName;
   }
 

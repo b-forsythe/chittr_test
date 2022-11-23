@@ -211,8 +211,8 @@ class _ELIFPageState extends State<ELIFPage> {
             backgroundColor: Colors.deepPurple,
             centerTitle: true,
           ),
-          body: Stack(
-            children: [
+          body: Column(
+            children: <Widget> [
               Align(
                 alignment: Alignment.bottomCenter,
                 child: ElevatedButton(
@@ -243,29 +243,38 @@ class _ELIFPageState extends State<ELIFPage> {
                        );
                      }).toList(),
                   )),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: elifLocations.length,
+                itemBuilder:(context,index) {
+                  return Card(
+                    child: ListTile(
+                      onTap: () {},
+                      title: Text(elifLocations[index].roomNum),
+                      trailing: Icon( elifLocations[index].accessibility == true ? Icons.accessible_sharp : null,),
+                      iconColor: Colors.blueAccent,
+
+                    ),
+                  );
+                }
+              ),
             ],
-          )),
+          )
+      ),
     );
   }
 
   // --------------------------
   //     Room List Selector
   // --------------------------
-  /*
-  Widget _buildList() {
-    return ListView(
 
-      children: [
-        _roomSelector(),
-      ],
+  List<Bathroom> elifLocations = [
+    Bathroom(roomNum: "531F", sex: 1, accessibility: false),
+    Bathroom(roomNum: "531M", sex: 0, accessibility: true),
+    Bathroom(roomNum: '583M', sex: 0, accessibility: true),
+    Bathroom(roomNum: '583F', sex: 1, accessibility: false),
+  ];
 
-    );
-  }
 
-  ListTile _roomSelector(Icon roomPreview, Bathroom roomData) {
-    return ListTile(
-
-    );
-  } */
 
 }
