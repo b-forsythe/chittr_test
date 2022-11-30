@@ -193,6 +193,8 @@ class DuckPage extends StatelessWidget {
 //              ELIF Building
 //    -------------------------------
 
+
+
 class ELIFPage extends StatefulWidget {
   @override
   State<ELIFPage> createState() => _ELIFPageState();
@@ -234,6 +236,7 @@ class _ELIFPageState extends State<ELIFPage> {
                      onChanged: (value){
                        setState(() {
                          selectVal = value.toString();
+
                        });
                      },
                      items: floorNumbers.map((itemone){
@@ -247,16 +250,22 @@ class _ELIFPageState extends State<ELIFPage> {
                 shrinkWrap: true,
                 itemCount: elifLocations.length,
                 itemBuilder:(context,index) {
-                  return Card(
-                    child: ListTile(
-                      onTap: () {},
-                      title: Text(elifLocations[index].roomNum),
-                      trailing: Icon( elifLocations[index].accessibility == true ? Icons.accessible_sharp : null,),
-                      iconColor: Colors.blueAccent,
 
-                    ),
-                  );
-                }
+                  if (selectVal == "Floor 5") {
+                    return Card(
+                      child: ListTile(
+                        onTap: () {},
+                        title: Text(elifLocations[index].roomNum),
+                        trailing: Icon(
+                          elifLocations[index].accessibility == true ? Icons
+                              .accessible_sharp : null,),
+                        iconColor: Colors.blueAccent,
+
+                      ),
+                    );
+                  }
+                  else {return const Card();}
+                },
               ),
             ],
           )
@@ -273,6 +282,11 @@ class _ELIFPageState extends State<ELIFPage> {
     Bathroom(roomNum: "531M", sex: 0, accessibility: true),
     Bathroom(roomNum: '583M', sex: 0, accessibility: true),
     Bathroom(roomNum: '583F', sex: 1, accessibility: false),
+    Bathroom(roomNum: '430F', sex: 1, accessibility: true),
+    Bathroom(roomNum: '310M', sex: 0, accessibility: false),
+    Bathroom(roomNum: '245M', sex: 1, accessibility: true),
+
+
   ];
 
 
