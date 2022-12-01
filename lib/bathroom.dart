@@ -1,10 +1,11 @@
 // William Glass
 
+
 class Bathroom {
   // ********************
   // *** Data Members ***
   // ********************
-  String bldName ="";
+  String bldName = "";
   String roomNum = "";
   int sex = 0;
   int upVoteNum = 0;
@@ -21,7 +22,7 @@ class Bathroom {
   Bathroom.set(this.bldName, this.roomNum, this.sex,
       this.upVoteNum, this.downVoteNum,
       this.accessibility, this.addiInfo);
-	  
+
 	// **************************
 	// *** JSON Needed Things ***
 	// **************************
@@ -35,7 +36,7 @@ class Bathroom {
     accessibility = json['accessibility'];
     addiInfo = json['addiInfo'];
 	}
-	
+
 	Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['bldName'] = this.bldName;
@@ -47,7 +48,7 @@ class Bathroom {
     data['addiInfo'] = this.addiInfo;
     return data;
 	}
-  
+
   // ****************************
   // *** Get member functions ***
   // ****************************

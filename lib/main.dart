@@ -2,15 +2,17 @@
 
 
 import 'package:flutter/material.dart';
-import 'bathroom.dart';
+import 'bathroom.dart';// ~B : I'm going to try implementing this at the bottom.
 import 'listing.dart';
 
-
-//var a = Bathroom();
-
+import 'package:flutter/services.dart';
 
 //import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
-//import 'bathroom.dart'; // ~B : I'm going to try implementing this at the bottom.
+
+import 'dart:async' show Future;
+//import 'package:flutter/services.dart' show rootBundle;
+import 'dart:convert';
+//import 'package:flutter/services.dart';
 
 void main() {
   // Base run for App.
@@ -145,7 +147,8 @@ class BrooksPage extends StatelessWidget {
         body: Center(
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pop(context); // On click, will return to "context" (in this case, home page).
+          Navigator.pop(
+              context); // On click, will return to "context" (in this case, home page).
         },
         child: const Text("Your mom"),
       ),
@@ -158,35 +161,37 @@ class BrooksPage extends StatelessWidget {
 //    -------------------------------
 
 class BunnellPage extends StatelessWidget {
-  BunnellPage({super.key});
-//Navigator.push(context, MaterialPageRoute(builder: (context) => Listing(1)) );
-  var bath = Bathroom(roomNum: '1',sex: 0,accessibility: false);
+  const BunnellPage({super.key});
+
   @override
   Widget build(BuildContext context) {
+    var bath = Bathroom(roomNum: '1',sex: 0,accessibility: false);
     return Scaffold(
+        body: Center(
+          child:
+              //Padding(
+              //  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              //child:
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
 
-      body:
-          Align(
-            alignment: Alignment.bottomCenter,
-      child:
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            FloatingActionButton(
-                onPressed: (){
+                ElevatedButton(
+                onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text("Go Home",textAlign: TextAlign.center,)
-            ),
-            FloatingActionButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Listing(bath)) );
-                },
-                child: const Text("Go to Listing",textAlign: TextAlign.center,)
-            ),
+                child: const Text("Back"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Listing(bath)) );
+                  },
+                  child: const Text("Go to listing",textAlign: TextAlign.center,),
+                ),
           ],
         )
-      ),
+       //       )
+      )
     );
   }
 }
@@ -202,14 +207,12 @@ class DuckPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-        child: ElevatedButton(
-            onPressed: () {
+            child: ElevatedButton(
+      onPressed: () {
         Navigator.pop(context);
       },
       child: const Text("Your Grandfather"),
-    ),
-        )
-    );
+    )));
   }
 }
 

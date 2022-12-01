@@ -1,0 +1,67 @@
+{
+	"Bathroom": [
+		{
+			"bldName": "ELIF",
+			"roomNum": "531F",
+			"sex": 1,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": false,
+			"addiInfo": "no additional info"
+		},
+		{
+			"bldName": "ELIF",
+			"roomNum": "531M",
+			"sex": 0,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": true,
+			"addiInfo": "no additional info"
+		},
+		{
+			"bldName": "ELIF",
+			"roomNum": "583M",
+			"sex": 0,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": true,
+			"addiInfo": "no additional info"
+		},
+		{
+			"bldName": "ELIF",
+			"roomNum": "583F",
+			"sex": 1,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": false,
+			"addiInfo": "no additional info"
+		},
+		{
+			"bldName": "ELIF",
+			"roomNum": "430F",
+			"sex": 1,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": true,
+			"addiInfo": "no additional info"
+		},
+		{
+			"bldName": "ELIF",
+			"roomNum": "310M",
+			"sex": 0,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": false,
+			"addiInfo": "no additional info"
+		},
+		{
+			"bldName": "ELIF",
+			"roomNum": "245M",
+			"sex": 1,
+			"upVoteNum": 0,
+			"downVoteNum": 0,
+			"accessibility": true,
+			"addiInfo": "no additional info"
+		}
+	]
+}
