@@ -28,7 +28,7 @@ class Bathroom {
   // ********************
   // *** Data Members ***
   // ********************
-  String bldName ="";
+  String bldName = "";
   String roomNum = "";
   int sex = 0;
   int upVoteNum = 0;
