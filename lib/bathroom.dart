@@ -1,28 +1,5 @@
 // William Glass
 
-class Chitts {
-  List<Bathroom>? bathroom;
-
-  Chitts({this.bathroom});
-
-  Chitts.fromJson(Map<String, dynamic> json) {
-    if (json['Bathroom'] != null) {
-      bathroom = <Bathroom>[];
-      json['Bathroom'].forEach((v) {
-        bathroom!.add(new Bathroom.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.bathroom != null) {
-      data['Bathroom'] = this.bathroom!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
-
 
 class Bathroom {
   // ********************

@@ -2,15 +2,21 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-//import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
 import 'bathroom.dart'; // ~B : I'm going to try implementing this at the bottom.
+
+import 'dart:async' show Future;
+//import 'package:flutter/services.dart' show rootBundle;
+import 'dart:convert';
+//import 'package:flutter/services.dart';
 
 void main() {
   // Base run for App.
   runApp(const MyApp());
 
   // Ignore Bellow Testing List of Bathrooms
+
   /*
   var test1 = Bathroom.set("ELIF", "100F", 1, 2,0,false,"no additional info");
   var test2 = Bathroom.set("ELIF", "100M", 0, 2,0,false,"no additional info");
@@ -19,6 +25,18 @@ void main() {
   bathroomList.add(test2);
   */
 
+  loadJson();
+}
+
+// reads bathroomList.json and makes a list of Bathroom items
+Future<void> loadJson() async {
+  String data = await rootBundle.loadString('jsons/bathroomList.json');
+  List<dynamic> bathroomJson = json.decode(data)["Bathroom"];
+  List<Bathroom> bathroomListo =
+    List<Bathroom>.from(bathroomJson.map<Bathroom>((dynamic i)
+    => Bathroom.fromJson(i)));
+  print("List of Bathroom Size: ") ;
+  print(bathroomListo.length);
 }
 
 class MyApp extends StatelessWidget {
