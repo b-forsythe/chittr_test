@@ -26,7 +26,18 @@ void main() {
   bathroomList.add(test1);
   bathroomList.add(test2);
   */
+  loadJson();
+}
 
+// reads bathroomList.json and makes a list of Bathroom items
+Future<void> loadJson() async {
+  String data = await rootBundle.loadString('jsons/bathroomList.json');
+  List<dynamic> bathroomJson = json.decode(data)["Bathroom"];
+  List<Bathroom> bathroomListo =
+  List<Bathroom>.from(bathroomJson.map<Bathroom>((dynamic i)
+  => Bathroom.fromJson(i)));
+  print("List of Bathroom Size: ") ;
+  print(bathroomListo.length);
 }
 
 class MyApp extends StatelessWidget {
