@@ -2,9 +2,15 @@
 
 
 import 'package:flutter/material.dart';
+import 'bathroom.dart';
+import 'listing.dart';
+
+
+//var a = Bathroom();
+
 
 //import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
-import 'bathroom.dart'; // ~B : I'm going to try implementing this at the bottom.
+//import 'bathroom.dart'; // ~B : I'm going to try implementing this at the bottom.
 
 void main() {
   // Base run for App.
@@ -139,8 +145,7 @@ class BrooksPage extends StatelessWidget {
         body: Center(
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pop(
-              context); // On click, will return to "context" (in this case, home page).
+          Navigator.pop(context); // On click, will return to "context" (in this case, home page).
         },
         child: const Text("Your mom"),
       ),
@@ -153,19 +158,36 @@ class BrooksPage extends StatelessWidget {
 //    -------------------------------
 
 class BunnellPage extends StatelessWidget {
-  const BunnellPage({super.key});
-
+  BunnellPage({super.key});
+//Navigator.push(context, MaterialPageRoute(builder: (context) => Listing(1)) );
+  var bath = Bathroom(roomNum: '1',sex: 0,accessibility: false);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: const Text("Your Dad"),
+
+      body:
+          Align(
+            alignment: Alignment.bottomCenter,
+      child:
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            FloatingActionButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                child: const Text("Go Home",textAlign: TextAlign.center,)
+            ),
+            FloatingActionButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Listing(bath)) );
+                },
+                child: const Text("Go to Listing",textAlign: TextAlign.center,)
+            ),
+          ],
+        )
       ),
-    ));
+    );
   }
 }
 
@@ -180,12 +202,14 @@ class DuckPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: ElevatedButton(
-      onPressed: () {
+        child: ElevatedButton(
+            onPressed: () {
         Navigator.pop(context);
       },
       child: const Text("Your Grandfather"),
-    )));
+    ),
+        )
+    );
   }
 }
 
