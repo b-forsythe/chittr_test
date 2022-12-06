@@ -2,43 +2,24 @@
 
 
 import 'package:flutter/material.dart';
-import 'bathroom.dart';// ~B : I'm going to try implementing this at the bottom.
+import 'bathroom.dart';
+import 'users.dart';
 import 'listing.dart';
-
 import 'package:flutter/services.dart';
 
-//import 'dart:convert'; // MAY BE TEMP USED FOR JSON FILES
 
-import 'dart:async' show Future;
-//import 'package:flutter/services.dart' show rootBundle;
-import 'dart:convert';
-//import 'package:flutter/services.dart';
-
-void main() {
+Future<void> main() async {
   // Base run for App.
   runApp(const MyApp());
 
-  // Ignore Bellow Testing List of Bathrooms
-  /*
-  var test1 = Bathroom.set("ELIF", "100F", 1, 2,0,false,"no additional info");
-  var test2 = Bathroom.set("ELIF", "100M", 0, 2,0,false,"no additional info");
-  List<Bathroom> bathroomList = [];
-  bathroomList.add(test1);
-  bathroomList.add(test2);
-  */
-  loadJson();
+  // Ignore Bellow Testing List of Bathrooms and Users
+  var bathroomTest = await loadBathroomJson();
+  var userTest = await loadUserJson();
+  print(bathroomTest[1].bldName);
+  print(userTest[1].userID);
 }
 
-// reads bathroomList.json and makes a list of Bathroom items
-Future<void> loadJson() async {
-  String data = await rootBundle.loadString('jsons/bathroomList.json');
-  List<dynamic> bathroomJson = json.decode(data)["Bathroom"];
-  List<Bathroom> bathroomListo =
-  List<Bathroom>.from(bathroomJson.map<Bathroom>((dynamic i)
-  => Bathroom.fromJson(i)));
-  print("List of Bathroom Size: ") ;
-  print(bathroomListo.length);
-}
+
 
 class MyApp extends StatelessWidget {
   // Base app creation

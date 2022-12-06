@@ -1,5 +1,18 @@
 // William Glass
+import 'package:flutter/services.dart';
+import 'dart:async' show Future;
+import 'dart:convert';
 
+
+// reads bathroomList.json and makes a list of Bathroom items
+Future<List<Bathroom>> loadBathroomJson() async {
+  String data = await rootBundle.loadString('jsons/bathroomList.json');
+  List<dynamic> bathroomJson = json.decode(data)["Bathroom"];
+  List<Bathroom> bathroomListo =
+  List<Bathroom>.from(bathroomJson.map<Bathroom>((dynamic i)
+  => Bathroom.fromJson(i)));
+  return bathroomListo;
+}
 
 class Bathroom {
   // ********************
@@ -126,3 +139,4 @@ class Bathroom {
 
 
 }
+
