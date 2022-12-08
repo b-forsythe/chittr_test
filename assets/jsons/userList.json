@@ -1,0 +1,32 @@
+{
+	"User": [
+		{
+			"userName": "JohnPot",
+			"userID": 0
+		},
+		{
+			"userName": "GoldenThrone",
+			"userID": 1
+		},
+		{
+			"userName": "ToiletKing",
+			"userID": 0
+		},
+		{
+			"userName": "MyThrone",
+			"userID": 1
+		},
+		{
+			"userName": "Potty",
+			"userID": 0
+		},
+		{
+			"userName": "HugeMess",
+			"userID": 1
+		},
+		{
+			"userName": "Ooops",
+			"userID": 1
+		}
+	]
+}

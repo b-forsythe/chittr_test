@@ -74,6 +74,8 @@ flutter:
     # JSON Section
     - assets/jsons/bathroomList.json
 
+    - assets/jsons/userList.json
+
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 

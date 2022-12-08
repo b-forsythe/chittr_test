@@ -45,4 +45,9 @@ class User {
   // ****************************
 
 
+  User.fromJson(Map<String, dynamic> json) {
+    userName = json['userName'];
+    userID = json['userID'];
+  }
+
 }

@@ -1,6 +1,7 @@
 // Copyright 2022 ChittR LLC.
 
 
+import 'package:chittr_test/users.dart';
 import 'package:flutter/material.dart';
 import 'bathroom.dart';// ~B : I'm going to try implementing this at the bottom.
 import 'listing.dart';
@@ -38,6 +39,17 @@ Future<void> loadJson() async {
   => Bathroom.fromJson(i)));
   print("List of Bathroom Size: ") ;
   print(bathroomListo.length);
+}
+
+// reads userList.json and makes a list of Bathroom items
+Future<void> userJson() async {
+  String data = await rootBundle.loadString('jsons/userList.json');
+  List<dynamic> userJson = json.decode(data)["User"];
+  List<User> userListo =
+  List<User>.from(userJson.map<User>((dynamic i)
+  => User.fromJson(i)));
+  print("List of Bathroom Size: ") ;
+  print(userListo.length);
 }
 
 class MyApp extends StatelessWidget {
